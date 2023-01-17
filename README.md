@@ -7,7 +7,7 @@ I try to add checkbox on html and the html number input object.
 Here's the github link of Challenge 5:
 https://github.com/laurabbity915/Password-Generator
 
-And here's the depolyed link:
+And here's the deployed link:
 https://laurabbity915.github.io/Password-Generator/
 
 

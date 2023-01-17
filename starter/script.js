@@ -125,14 +125,74 @@ function generatePassword() {
 
   let mergedCharSet = getPasswordOptions();
   let generatedPassword = '';
-  for(let i = 0; i < document.getElementById("quantity").value; i++){
+  for (let i = 0; i < document.getElementById("quantity").value; i++) {
     generatedPassword += getRandom(mergedCharSet);
   }
-  writePassword(generatedPassword);
+  if (!isValidate(generatedPassword)) {
+    console.log("retry " + generatedPassword);
+
+    generatePassword();
+  } else {
+    writePassword(generatedPassword);
+  }
 }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
+
+//Validation of generated password
+function checkUpperCase(password) {
+  if (document.getElementById("upper").checked == true) {
+    if (/^(?=.*[A-Z])/.test(password)) {
+      return true;
+    }
+    return false;
+  }
+  return true;
+}
+
+function checkLowerCase(password) {
+  if (document.getElementById("lower").checked == true) {
+    if (/^(?=.*[a-z])/.test(password)) {
+      return true;
+    }
+    return false;
+  }
+  return true;
+}
+
+function checkNumber(password) {
+  if (document.getElementById("number").checked == true) {
+    if (/^(?=.*[0-9])/.test(password)) {
+      return true;
+    }
+    return false;
+  }
+  return true;
+}
+
+function checkSpecialCharacters(password) {
+  if (document.getElementById("specialcharacters").checked == true) {
+    let split = password.split('');
+    console.log(split)
+    for (let i = 0; i < split.length; i++) {
+      if (specialCharacters.includes(split[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+  return true;
+}
+
+function isValidate(password) {
+
+  return checkUpperCase(password) &&
+    checkLowerCase(password) &&
+    checkNumber(password) &&
+    checkSpecialCharacters(password);
+
+}
 
 // Write password to the #password input
 function writePassword(password) {
