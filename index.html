@@ -27,21 +27,23 @@
         </div>
         <div>
           Upper Case: <input type="checkbox" id="upper">
-          <br>
-          Lower Case: <input type="checkbox" id="lower">
-          <br>
-          Number: <input type="checkbox" id="number">
-          <br>
-          Special characters: <input type="checkbox" id="specialcharacters">
-        </div>
-        <div>
-          <br>
-            <label for="quantity">Length of password:(between 8 and 20):</label>
-            <input type="number" id="quantity" name="quantity" min="8" max="20">
-            <br>
+          </div>
+          <div>
+            Lower Case: <input type="checkbox" id="lower">
+          </div>
+          <div>
+            Number: <input type="checkbox" id="number">
+          </div>
+          <div>
+            Special characters: <input type="checkbox" id="specialcharacters">
+          </div>
+          <div>
+            <label for="quantity">Length of password:(between 8 and 128):</label>
+            <input type="number" id="quantity" name="quantity" min="8" max="128">
+          </div>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn" onclick="generatePassword(), getPasswordOptions()">Generate Password</button>
+          <button id="generate" class="btn" onclick="generatePassword()">Generate Password</button>
         </div>
       </div>
     </div>
