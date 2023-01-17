@@ -90,11 +90,11 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  console.log(document.getElementById("upper").checked);
-  console.log(document.getElementById("lower").checked);
-  console.log(document.getElementById("number").checked);
-  console.log(document.getElementById("specialcharacters").checked);
-  console.log(document.getElementById("quantity").value);
+  // console.log(document.getElementById("upper").checked);
+  // console.log(document.getElementById("lower").checked);
+  // console.log(document.getElementById("number").checked);
+  // console.log(document.getElementById("specialcharacters").checked);
+  // console.log(document.getElementById("quantity").value);
 
   let passwordCharSet = [];
 
